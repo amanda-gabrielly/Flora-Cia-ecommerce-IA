@@ -10,7 +10,17 @@ const perguntaIA = document.getElementById("pergunta-ia");
 const enviarPergunta = document.getElementById("enviar-pergunta");
 
 /* ========================= */
-/* CARRINHO E NOTIFICAÇÕES */
+/* HELPER DE FORMATAÇÃO      */
+/* ========================= */
+
+function formatarTextoMarkdown(texto) {
+    return texto
+        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Transforma **texto** em negrito
+        .replace(/\n/g, "<br>");                        // Transforma quebras de linha em <br>
+}
+
+/* ========================= */
+/* CARRINHO E NOTIFICAÇÕES   */
 /* ========================= */
 
 function adicionarCarrinho(nomeProduto) {
@@ -58,7 +68,7 @@ function mostrarPromocao() {
 }
 
 /* ========================= */
-/* MODAL DO CHAT */
+/* MODAL DO CHAT            */
 /* ========================= */
 
 abrirChat.addEventListener("click", () => {
@@ -139,7 +149,7 @@ function responderIA(opcao) {
 }
 
 /* ========================= */
-/* ESTRUTURA VISUAL DAS MENSAGENS */
+/* ESTRUTURA VISUAL         */
 /* ========================= */
 
 function mostrarPerguntaUsuario(pergunta) {
@@ -161,7 +171,7 @@ function mostrarResposta(resposta) {
 
     const conteudo = document.createElement("div");
     conteudo.classList.add("mensagem-conteudo");
-    conteudo.innerHTML = "🤖 " + resposta.replace(/\n/g, "<br>");
+    conteudo.innerHTML = "🤖 " + formatarTextoMarkdown(resposta);
 
     mensagem.appendChild(conteudo);
     mensagens.appendChild(mensagem);
@@ -184,7 +194,7 @@ function criarElementoCarregando() {
 }
 
 /* ========================= */
-/* EVENTOS DE ENVIO */
+/* EVENTOS DE ENVIO          */
 /* ========================= */
 
 enviarPergunta.addEventListener("click", () => enviarPerguntaIA());
