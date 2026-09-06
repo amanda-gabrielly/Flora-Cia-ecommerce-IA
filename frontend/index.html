@@ -1,549 +1,235 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Flora & Cia | Floricultura</title>
-
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-    <header class="cabecalho">
-
-        <a href="#" class="logo">
-            🌷 Flora <span>& Cia</span>
-        </a>
-
-        <nav class="menu">
-
-            <a href="#">Início</a>
-
-            <a href="#flores">Flores</a>
-
-            <a href="#promocoes">Promoções</a>
-
-            <a href="#sobre">Sobre</a>
-
-        </nav>
-
-        <button class="carrinho">
-
-            🛒 Carrinho
-
-            <span id="contador">0</span>
-
-        </button>
-
-    </header>
-
-
-    <main>
-
-        <!-- BANNER -->
-
-        <section class="banner">
-
-            <div class="banner-conteudo">
-
-                <p class="destaque">
-                    FLORES PARA TODOS OS MOMENTOS
-                </p>
-
-                <h1>
-                    Espalhe carinho
-                    <span>com flores.</span>
-                </h1>
-
-                <p class="descricao">
-
-                    Encontre o buquê perfeito para presentear
-                    alguém especial ou deixar seu dia ainda mais bonito.
-
-                </p>
-
-                <a href="#flores" class="botao-principal">
-
-                    Comprar agora
-
-                </a>
-
-            </div>
-
-
-            <div class="banner-imagem">
-
-                <div class="flor-principal">
-
-                    🌷
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- PRODUTOS -->
-
-        <section class="produtos" id="flores">
-
-            <div class="titulo">
-
-                <p>NOSSA COLEÇÃO</p>
-
-                <h2>Flores mais escolhidas</h2>
-
-            </div>
-
-
-            <div class="produtos-container">
-
-
-                <article class="produto">
-
-                    <div class="produto-imagem rosa">
-
-                        🌹
-
-                    </div>
-
-                    <div class="produto-info">
-
-                        <span>Mais vendido</span>
-
-                        <h3>Buquê de Rosas</h3>
-
-                        <p>
-
-                            Rosas vermelhas para demonstrar
-                            amor e carinho.
-
-                        </p>
-
-                        <strong>R$ 89,90</strong>
-
-                        <button onclick="adicionarCarrinho('Buquê de Rosas')">
-
-                            🛒 Comprar
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="produto">
-
-                    <div class="produto-imagem roxo">
-
-                        🌷
-
-                    </div>
-
-                    <div class="produto-info">
-
-                        <span>Delicado</span>
-
-                        <h3>Buquê de Tulipas</h3>
-
-                        <p>
-
-                            Tulipas coloridas para momentos
-                            especiais.
-
-                        </p>
-
-                        <strong>R$ 79,90</strong>
-
-                        <button onclick="adicionarCarrinho('Buquê de Tulipas')">
-
-                            🛒 Comprar
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="produto">
-
-                    <div class="produto-imagem amarelo">
-
-                        🌻
-
-                    </div>
-
-                    <div class="produto-info">
-
-                        <span>Especial</span>
-
-                        <h3>Buquê de Girassóis</h3>
-
-                        <p>
-
-                            Flores alegres para iluminar
-                            qualquer ocasião.
-
-                        </p>
-
-                        <strong>R$ 69,90</strong>
-
-                        <button onclick="adicionarCarrinho('Buquê de Girassóis')">
-
-                            🛒 Comprar
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-
-                <article class="produto">
-
-                    <div class="produto-imagem colorido">
-
-                        💐
-
-                    </div>
-
-                    <div class="produto-info">
-
-                        <span>Premium</span>
-
-                        <h3>Buquê Especial</h3>
-
-                        <p>
-
-                            Uma combinação especial de flores
-                            para surpreender.
-
-                        </p>
-
-                        <strong>R$ 119,90</strong>
-
-                        <button onclick="adicionarCarrinho('Buquê Especial')">
-
-                            🛒 Comprar
-
-                        </button>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- PROMOÇÃO -->
-
-        <section class="promocao" id="promocoes">
-
-            <div>
-
-                <p>OFERTA ESPECIAL</p>
-
-                <h2>
-
-                    20% OFF
-
-                    <br>
-
-                    em buquês selecionados
-
-                </h2>
-
-                <button onclick="mostrarPromocao()">
-
-                    Aproveitar oferta
-
-                </button>
-
-            </div>
-
-
-            <div class="promocao-flor">
-
-                🌸
-
-            </div>
-
-        </section>
-
-
-        <!-- ASSISTENTE DE IA -->
-
-        <section class="assistente">
-
-            <div class="assistente-icone">
-
-                🤖
-
-            </div>
-
-
-            <div class="assistente-texto">
-
-                <p>ASSISTENTE VIRTUAL</p>
-
-                <h2>
-
-                    Não sabe qual flor escolher?
-
-                </h2>
-
-                <span>
-
-                    Nossa IA pode ajudar você a encontrar
-                    o presente perfeito.
-
-                </span>
-
-            </div>
-
-
-            <button id="abrir-chat">
-
-                💬 Falar com a IA
-
-            </button>
-
-        </section>
-
-
-        <!-- CHAT -->
-
-        <div class="chat" id="chat">
-
-
-            <div class="chat-cabecalho">
-
-                <div>
-
-                    🤖 <strong>Flora IA</strong>
-
-                    <small>
-
-                        Assistente virtual
-
-                    </small>
-
-                </div>
-
-
-                <button id="fechar-chat">
-
-                    ✕
-
-                </button>
-
-            </div>
-
-
-            <div class="chat-mensagens" id="chat-mensagens">
-
-
-                <div class="mensagem mensagem-ia">
-
-                    <div class="mensagem-conteudo">
-
-                        🌷 Olá! Eu sou a Flora IA.
-
-                        <br><br>
-
-                        Posso ajudar você a escolher
-                        o buquê ideal!
-
-                        <br><br>
-
-                        Você pode escolher uma opção abaixo
-                        ou digitar sua própria pergunta.
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-            <!-- OPÇÕES PRONTAS -->
-
-            <div class="opcoes-ia">
-
-                <button onclick="responderIA('namoro')">
-
-                    ❤️ Namoro
-
-                </button>
-
-
-                <button onclick="responderIA('aniversario')">
-
-                    🎂 Aniversário
-
-                </button>
-
-
-                <button onclick="responderIA('maes')">
-
-                    👩‍👧 Dia das Mães
-
-                </button>
-
-
-                <button onclick="responderIA('amizade')">
-
-                    🌻 Amizade
-
-                </button>
-
-
-                <button onclick="responderIA('presente')">
-
-                    🎁 Presente
-
-                </button>
-
-            </div>
-
-
-            <!-- CAMPO PARA PERGUNTAR -->
-
-            <div class="chat-entrada">
-
-                <input
-                    type="text"
-                    id="pergunta-ia"
-                    placeholder="Digite sua pergunta..."
-                    autocomplete="off"
-                >
-
-                <button
-                    id="enviar-pergunta"
-                    type="button"
-                >
-
-                    ➤
-
-                </button>
-
-            </div>
-
-
-        </div>
-
-
-        <!-- SOBRE -->
-
-        <section class="sobre" id="sobre">
-
-            <div>
-
-                <p>SOBRE A FLORA & CIA</p>
-
-                <h2>
-
-                    Flores que transformam momentos.
-
-                </h2>
-
-            </div>
-
-
-            <p>
-
-                Na Flora & Cia, acreditamos que uma flor pode
-                transformar um momento simples em uma lembrança
-                especial. Trabalhamos com flores selecionadas
-                para diferentes ocasiões.
-
+<header class="cabecalho">
+    <a href="#" class="logo">Flora <span>& Cia</span></a>
+
+    <nav class="menu">
+        <a href="#">Início</a>
+        <a href="#flores">Flores</a>
+        <a href="#promocoes">Promoções</a>
+        <a href="#sobre">Sobre</a>
+    </nav>
+
+    <button class="carrinho" type="button" aria-label="Abrir carrinho">
+        Carrinho <span id="contador">0</span>
+    </button>
+</header>
+
+<main>
+
+    <section class="banner">
+        <div class="banner-conteudo">
+            <p class="destaque">FLORES PARA TODOS OS MOMENTOS</p>
+
+            <h1>
+                Espalhe carinho
+                <span>com flores.</span>
+            </h1>
+
+            <p class="descricao">
+                Encontre o buquê perfeito para presentear alguém especial
+                ou deixar seu dia ainda mais bonito.
             </p>
 
-        </section>
+            <a href="#flores" class="botao-principal">Comprar agora</a>
+        </div>
 
-    </main>
+        <div class="banner-imagem">
+            <img src="imagens/especial.jpg" alt="Buquê especial da Flora & Cia">
+        </div>
+    </section>
 
+    <section class="produtos" id="flores">
+        <div class="titulo">
+            <p>NOSSA COLEÇÃO</p>
+            <h2>Flores mais escolhidas</h2>
+        </div>
 
-    <!-- RODAPÉ -->
+        <div class="produtos-container">
 
-    <footer>
+            <article class="produto">
+                <button class="produto-imagem rosa" type="button"
+                    onclick="adicionarCarrinho('Buquê de Rosas')"
+                    aria-label="Adicionar Buquê de Rosas ao carrinho">
+                    <img src="imagens/rosas.jpg" alt="Buquê de Rosas">
+                </button>
 
-        <div class="logo">
+                <div class="produto-info">
+                    <span>Mais vendido</span>
+                    <h3>Buquê de Rosas</h3>
+                    <p>Rosas vermelhas para demonstrar amor e carinho.</p>
+                    <strong>R$ 89,90</strong>
 
-            🌷 Flora <span>& Cia</span>
+                    <button class="botao-comprar" type="button"
+                        onclick="adicionarCarrinho('Buquê de Rosas')">
+                        Comprar
+                    </button>
+                </div>
+            </article>
 
+            <article class="produto">
+                <button class="produto-imagem roxo" type="button"
+                    onclick="adicionarCarrinho('Buquê de Tulipas')"
+                    aria-label="Adicionar Buquê de Tulipas ao carrinho">
+                    <img src="imagens/tulipas.jpg" alt="Buquê de Tulipas">
+                </button>
+
+                <div class="produto-info">
+                    <span>Delicado</span>
+                    <h3>Buquê de Tulipas</h3>
+                    <p>Tulipas coloridas para momentos especiais.</p>
+                    <strong>R$ 79,90</strong>
+
+                    <button class="botao-comprar" type="button"
+                        onclick="adicionarCarrinho('Buquê de Tulipas')">
+                        Comprar
+                    </button>
+                </div>
+            </article>
+
+            <article class="produto">
+                <button class="produto-imagem amarelo" type="button"
+                    onclick="adicionarCarrinho('Buquê de Girassóis')"
+                    aria-label="Adicionar Buquê de Girassóis ao carrinho">
+                    <img src="imagens/girassois.jpg" alt="Buquê de Girassóis">
+                </button>
+
+                <div class="produto-info">
+                    <span>Especial</span>
+                    <h3>Buquê de Girassóis</h3>
+                    <p>Flores alegres para iluminar qualquer ocasião.</p>
+                    <strong>R$ 69,90</strong>
+
+                    <button class="botao-comprar" type="button"
+                        onclick="adicionarCarrinho('Buquê de Girassóis')">
+                        Comprar
+                    </button>
+                </div>
+            </article>
+
+            <article class="produto">
+                <button class="produto-imagem colorido" type="button"
+                    onclick="adicionarCarrinho('Buquê Especial')"
+                    aria-label="Adicionar Buquê Especial ao carrinho">
+                    <img src="imagens/especial.jpg" alt="Buquê Especial">
+                </button>
+
+                <div class="produto-info">
+                    <span>Premium</span>
+                    <h3>Buquê Especial</h3>
+                    <p>Uma combinação especial de flores para surpreender.</p>
+                    <strong>R$ 119,90</strong>
+
+                    <button class="botao-comprar" type="button"
+                        onclick="adicionarCarrinho('Buquê Especial')">
+                        Comprar
+                    </button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="promocao" id="promocoes">
+        <div>
+            <p>OFERTA ESPECIAL</p>
+            <h2>20% OFF<br>em buquês selecionados</h2>
+            <button type="button" onclick="mostrarPromocao()">Aproveitar oferta</button>
+        </div>
+
+        <div class="promocao-flor">
+            <img src="imagens/rosas.jpg" alt="Buquê de rosas em promoção">
+        </div>
+    </section>
+
+    <section class="assistente">
+        <div class="assistente-icone">🤖🌸</div>
+
+        <div class="assistente-texto">
+            <p>ASSISTENTE VIRTUAL</p>
+            <h2>Não sabe qual flor escolher?</h2>
+            <span>Nossa IA pode ajudar você a encontrar o presente perfeito.</span>
+        </div>
+
+        <button id="abrir-chat" type="button">Falar com a IA</button>
+    </section>
+
+    <div class="chat" id="chat" aria-hidden="true">
+        <div class="chat-cabecalho">
+            <div>
+                <strong>Flora IA</strong>
+                <small>Assistente virtual</small>
+            </div>
+
+            <button id="fechar-chat" type="button" aria-label="Fechar chat">×</button>
+        </div>
+
+        <div class="chat-mensagens" id="chat-mensagens">
+            <div class="mensagem mensagem-ia">
+                <div class="mensagem-conteudo">
+                    Olá! Eu sou a Flora IA.<br><br>
+                    Posso ajudar você a escolher o buquê ideal.<br><br>
+                    Você pode escolher uma opção abaixo ou digitar sua dúvida!
+                </div>
+            </div>
+        </div>
+
+        <div class="opcoes-ia">
+            <button type="button" onclick="responderIA('namoro')">Namoro</button>
+            <button type="button" onclick="responderIA('aniversario')">Aniversário</button>
+            <button type="button" onclick="responderIA('maes')">Dia das Mães</button>
+            <button type="button" onclick="responderIA('amizade')">Amizade</button>
+            <button type="button" onclick="responderIA('presente')">Presente</button>
+        </div>
+
+        <!-- CAMPO DE ENTRADA DO CHAT -->
+        <div class="chat-entrada">
+            <input type="text" id="pergunta-ia" placeholder="Digite sua pergunta..." autocomplete="off">
+            <button id="enviar-pergunta" type="button">➤</button>
+        </div>
+    </div>
+
+    <section class="sobre" id="sobre">
+        <div>
+            <p>SOBRE A FLORA & CIA</p>
+            <h2>Flores que transformam momentos.</h2>
         </div>
 
         <p>
-
-            © 2026 Flora & Cia. Todos os direitos reservados.
-
+            Na Flora & Cia, acreditamos que uma flor pode transformar
+            um momento simples em uma lembrança especial. Trabalhamos
+            com flores selecionadas para diferentes ocasiões.
         </p>
+    </section>
 
-    </footer>
+</main>
 
+<footer>
+    <div class="logo">Flora <span>& Cia</span></div>
+    <p>© 2026 Flora & Cia. Todos os direitos reservados.</p>
+</footer>
 
-    <!-- NOTIFICAÇÃO DO CARRINHO -->
+<div class="notificacao-carrinho" id="notificacao-carrinho">
+    <div class="notificacao-icone">✓</div>
 
-    <div
-        class="notificacao-carrinho"
-        id="notificacao-carrinho"
-    >
-
-        <div class="notificacao-icone">
-
-            ✓
-
-        </div>
-
-
-        <div class="notificacao-conteudo">
-
-            <strong>
-
-                Produto adicionado!
-
-            </strong>
-
-            <p id="nome-produto-notificacao">
-
-                Produto adicionado ao carrinho.
-
-            </p>
-
-        </div>
-
-
-        <button
-            class="fechar-notificacao"
-            onclick="fecharNotificacao()"
-        >
-
-            ×
-
-        </button>
-
+    <div class="notificacao-conteudo">
+        <strong>Produto adicionado!</strong>
+        <p id="nome-produto-notificacao">Produto adicionado ao carrinho.</p>
     </div>
 
+    <button class="fechar-notificacao" type="button"
+        onclick="fecharNotificacao()" aria-label="Fechar notificação">×</button>
+</div>
 
-    <script src="script.js"></script>
-
+<script src="script.js"></script>
 </body>
-
 </html>
